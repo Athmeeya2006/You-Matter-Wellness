@@ -1,4 +1,4 @@
-<![CDATA[# 🧠⚡💎 YouMatter — Wellness Gauntlet 💎⚡🧠
+# 🧠⚡💎 YouMatter — Wellness Gauntlet 💎⚡🧠
 
 **A gamified wellness platform that transforms your health journey into an epic quest to master the Infinity Stones of Well-Being.**
 
@@ -498,4 +498,4 @@ This project was built for the **Star Union Dai-ichi Life Insurance Hackathon**.
 *Solving engagement challenges through gamification and behavioral psychology.*
 
 **Made with ❤️ by Team YouMatter**
-]]>
+
