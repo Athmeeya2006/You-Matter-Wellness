@@ -1,6 +1,4 @@
-<![CDATA[<div align="center">
-
-# 🧠⚡💎 YouMatter — Wellness Gauntlet 💎⚡🧠
+<![CDATA[# 🧠⚡💎 YouMatter — Wellness Gauntlet 💎⚡🧠
 
 **A gamified wellness platform that transforms your health journey into an epic quest to master the Infinity Stones of Well-Being.**
 
@@ -12,27 +10,25 @@
 
 *Built for the Star Union Dai-ichi Life Insurance Hackathon — solving user engagement challenges through gamification and behavioral psychology.*
 
-</div>
-
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Core Concept](#-core-concept)
-- [Key Features](#-key-features)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [API Reference](#-api-reference)
-- [Pages & Components](#-pages--components)
-- [Behavioral Psychology](#-behavioral-psychology)
-- [Innovation Tracks](#-innovation-tracks)
-- [Demo Flow](#-demo-flow)
-- [Future Roadmap](#-future-roadmap)
-- [License](#-license)
+- [Overview](#overview)
+- [Core Concept](#core-concept)
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [API Reference](#api-reference)
+- [Pages & Components](#pages--components)
+- [Behavioral Psychology](#behavioral-psychology)
+- [Innovation Tracks](#innovation-tracks)
+- [Demo Flow](#demo-flow)
+- [Future Roadmap](#future-roadmap)
+- [License](#license)
 
 ---
 
@@ -499,11 +495,7 @@ This project was built for the **Star Union Dai-ichi Life Insurance Hackathon**.
 
 ---
 
-<div align="center">
-
 *Solving engagement challenges through gamification and behavioral psychology.*
 
 **Made with ❤️ by Team YouMatter**
-
-</div>
 ]]>
