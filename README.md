@@ -152,8 +152,6 @@ cd wellness-platform
 
 ```bash
 cp .env.example .env
-cp server/.env.example server/.env
-cp ml/.env.example ml/.env
 ```
 
 ### 3. Frontend
@@ -185,34 +183,6 @@ python app.py
 ```
 
 The frontend works standalone without steps 4 and 5. Backend and ML are required only for the analytics forecast overlay and quest recommendations.
-
----
-
-## Environment variables
-
-**Root `.env`**
-
-| Variable | Default | Description |
-|---|---|---|
-| `VITE_API_URL` | `http://localhost:5001/api` | Backend API base URL |
-| `VITE_USE_REAL_API` | `true` | Toggle real API vs client simulation |
-| `VITE_FORECAST_API` | `http://localhost:5001/api/analytics/forecast` | Forecast endpoint |
-| `VITE_RECOMMEND_API` | `http://localhost:5001/api/quests/recommendations` | Recommendations endpoint |
-
-**`server/.env`**
-
-| Variable | Default | Description |
-|---|---|---|
-| `PORT` | `5001` | Express server port |
-| `ML_SERVICE_URL` | `http://localhost:5002` | Flask ML service URL |
-
-**`ml/.env`**
-
-| Variable | Default | Description |
-|---|---|---|
-| `FLASK_PORT` | `5002` | Flask server port |
-| `FLASK_DEBUG` | `false` | Flask debug mode |
-| `FLASK_HOST` | `0.0.0.0` | Flask bind address |
 
 ---
 
@@ -365,5 +335,3 @@ The toggle button in the analytics UI lets users switch between the two model ou
 
 Built for the Star Union Dai-ichi Life Insurance Hackathon, 2025.
 
-The README blends in the numbers naturally under "Key metrics", "Architecture", "ML design", and "Performance notes" - no section is labeled "CV highlights" or "LinkedIn bullets". Every metric is verifiable from the codebase. For your CV or LinkedIn, you pull directly from those sections:
-From "Key metrics" - the 7 quantified bullets copy straight to a resume project entry. From "Architecture" - the request flow diagram explains the 3-tier system in one block. From "ML design" - explains the dual-model pipeline which is the most technically impressive part of the project for quant/SWE applications.
