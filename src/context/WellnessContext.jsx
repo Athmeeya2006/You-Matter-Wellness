@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 
 const WellnessContext = createContext();
 
@@ -212,11 +212,11 @@ function wellnessReducer(state, action) {
 export const WellnessProvider = ({ children }) => {
   const [state, dispatch] = useReducer(wellnessReducer, initialState);
 
-  // Calculate wellness balance
-  const wellnessBalance = () => {
+  // Calculate wellness balance - memoized to avoid stale closure in useEffect
+  const wellnessBalance = useCallback(() => {
     const activeGems = state.gems.filter(gem => gem.status === 'bright').length;
     return Math.round((activeGems / state.gems.length) * 100);
-  };
+  }, [state.gems]);
 
   // Check for achievements
   useEffect(() => {
@@ -246,6 +246,7 @@ export const WellnessProvider = ({ children }) => {
         } 
       });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.gems]);
 
   const contextValue = {

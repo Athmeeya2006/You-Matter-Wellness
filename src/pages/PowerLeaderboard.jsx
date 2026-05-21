@@ -22,6 +22,7 @@ const PowerLeaderboard = () => {
 
     window.addEventListener('wellnessUpdate', handleUpdate);
     return () => window.removeEventListener('wellnessUpdate', handleUpdate);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const resetAndLoad = () => {

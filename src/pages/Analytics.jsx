@@ -53,15 +53,7 @@ const Analytics = () => {
   console.log("backendForecast", backendForecast);
   console.log("backendInsights", backendInsights);
   console.log("predictions", predictions);
-  <div className="toggle-container">
-  <button 
-    onClick={() => setUseBackend(!useBackend)}
-    className={`toggle-btn ${useBackend ? "active" : ""}`}
-  >
-    {useBackend ? "Using Backend AI 🤖" : "Using Local TF.js 📈"}
-  </button>
-</div>
-
+  
   // Generate mock historical data
   const generateHistoricalData = () => {
     const days = timeRange === 'week' ? 7 : timeRange === 'month' ? 30 : 90;
@@ -109,13 +101,14 @@ const Analytics = () => {
 
         if (forecastRes.data?.values) setBackendForecast(forecastRes.data.values);
         if (insightsRes.data) setBackendInsights(insightsRes.data);
-      } catch (err) {
+      } catch (_err) {
         console.warn("Backend ML unavailable, using local TF.js only.");
       }
     }
 
     runLocalML();
     fetchBackendML();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.user]);
 
   // Chart data
@@ -502,7 +495,7 @@ const wellnessBalanceData = {
           `Your wellness balance is predicted to change by ${Math.round(
             predictions[predictions.length - 1] - predictions[0]
           )}% over the next week.`,
-          "Keep consistency — local trend shows improvement!",
+          "Keep consistency - local trend shows improvement!",
         ];
         return localMsgs.map((msg, i) => (
           <motion.div

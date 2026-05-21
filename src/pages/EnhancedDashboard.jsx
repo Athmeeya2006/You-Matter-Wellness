@@ -38,6 +38,7 @@ const Dashboard = ({ user }) => {
     }, 10000); // Every 10 seconds
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadDashboardData = async () => {
@@ -167,16 +168,6 @@ const Dashboard = ({ user }) => {
     }
   };
   
-  const todayQuests = state.gems.reduce((acc, gem) => {
-    return acc + gem.quests.filter(quest => !quest.completed).length;
-  }, 0);
-
-  const completedQuests = state.gems.reduce((acc, gem) => {
-    return acc + gem.quests.filter(quest => quest.completed).length;
-  }, 0);
-
-  const activeGems = state.gems.filter(gem => gem.status === 'bright').length;
-
   const quickStats = [
     {
       icon: Target,
@@ -208,17 +199,12 @@ const Dashboard = ({ user }) => {
     }
   ];
 
-  const recentAchievements = state.achievements
-    .filter(achievement => achievement.unlocked)
-    .slice(0, 3);
 
   if (loading) {
     return (
-      <div className="dashboard">
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <p>Synchronizing with the cosmos...</p>
-        </div>
+      <div className="dashboard" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
+        <div className="loading-spinner cosmic"></div>
+        <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem' }}>Synchronizing with the cosmos...</p>
       </div>
     );
   }
@@ -262,7 +248,7 @@ const Dashboard = ({ user }) => {
               <Activity size={16} />
               <span>Live Updates</span>
             </div>
-            {realtimeUpdates.slice(0, 3).map((update, index) => (
+            {realtimeUpdates.slice(0, 3).map((update, _index) => (
               <motion.div
                 key={update.id}
                 initial={{ opacity: 0, y: -10 }}

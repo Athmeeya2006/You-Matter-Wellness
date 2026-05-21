@@ -20,7 +20,6 @@ import './Community.css';
 const Community = () => {
   const { state, addNotification } = useWellness();
   const [activeTab, setActiveTab] = useState('feed');
-  const [selectedChallenge, setSelectedChallenge] = useState(null);
 
   // Mock community data
   const communityFeed = [
@@ -133,15 +132,15 @@ const Community = () => {
     }
   ];
 
-  const handleLike = (postId) => {
+  const handleLike = (_postId) => {
     addNotification(`❤️ You liked a community post!`, 'info');
   };
 
-  const handleJoinChallenge = (challengeId) => {
+  const handleJoinChallenge = (_challengeId) => {
     addNotification(`🎯 You joined a community challenge!`, 'achievement');
   };
 
-  const handleShare = (item) => {
+  const handleShare = (_item) => {
     addNotification(`📤 Achievement shared with community!`, 'info');
   };
 
@@ -367,7 +366,7 @@ const Community = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   whileHover={{ scale: 1.02, y: -5 }}
-                  onClick={() => setSelectedChallenge(challenge)}
+                  onClick={() => setActiveTab('challenges')}
                 >
                   <div className="challenge-header">
                     <div className="challenge-category">

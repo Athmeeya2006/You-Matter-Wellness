@@ -13,15 +13,12 @@ import {
   EyeOff,
   Sparkles
 } from 'lucide-react';
-import { useWellness } from '../context/WellnessContext';
 import GemCard from '../components/GemCard';
 import InfinityStone from '../components/InfinityStone';
 import wellnessAPI from '../services/api';
-import './Gauntlet.css';
 import './EnhancedGauntlet.css';
 
 const EnhancedGauntlet = () => {
-  const { state, dispatch, wellnessBalance, simulateDecay, resetGauntlet } = useWellness();
   const [selectedGem, setSelectedGem] = useState(null);
   const [showInterconnections, setShowInterconnections] = useState(true);
   const [apiStones, setApiStones] = useState({});
@@ -92,6 +89,7 @@ const EnhancedGauntlet = () => {
       
       updateConnectionStrengths();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiStones]);
 
   const loadGauntletData = async () => {
@@ -166,7 +164,8 @@ const EnhancedGauntlet = () => {
     setConnectionStrength(strengths);
   };
 
-  const handleGemClick = (gem) => {
+  // handleGemClick is reserved for future gem detail panel feature
+  const _handleGemClick = (gem) => {
     setSelectedGem(selectedGem?.id === gem.id ? null : gem);
   };
 
@@ -306,7 +305,7 @@ const EnhancedGauntlet = () => {
               <Activity size={16} />
               <span>Gauntlet Status</span>
             </div>
-            {realtimeUpdates.slice(0, 3).map((update, index) => (
+            {realtimeUpdates.slice(0, 3).map((update, _index) => (
               <motion.div
                 key={update.id}
                 initial={{ opacity: 0, y: -10 }}

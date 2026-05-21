@@ -16,7 +16,6 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
@@ -25,3 +24,18 @@ dist-ssr
 
 # Backend dependencies
 /server/node_modules
+
+# Environment files
+.env
+server/.env
+ml/.env
+
+# Python
+ml/venv/
+ml/__pycache__/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

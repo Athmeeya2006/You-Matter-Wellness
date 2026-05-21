@@ -107,7 +107,7 @@ const Social = () => {
           >
             <h3>Recent Activities</h3>
             <div className="notifications-list">
-              {notifications.slice(0, 5).map((notification, index) => (
+              {notifications.slice(0, 5).map((notification, _index) => (
                 <div key={notification.id} className="notification-item">
                   <div className="notification-content">
                     <strong>{notification.title}</strong>

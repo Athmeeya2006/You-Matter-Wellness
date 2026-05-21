@@ -3,6 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from prophet import Prophet
 from dotenv import load_dotenv
 
@@ -11,6 +12,7 @@ load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
+CORS(app)
 
 # Mock Data - In a real app, this would come from a database
 all_quests = [
@@ -66,6 +68,13 @@ def get_recommendations():
     
     recommended_quests = [q for q in all_quests if q['category'] == weakest_gem]
     return jsonify(recommended_quests[:3])
+
+# ----------------------
+# API: Health check
+# ----------------------
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({"status": "ok", "service": "wellness-ml"})
 
 # ----------------------
 # Run Flask

@@ -42,7 +42,7 @@ class WellnessAPI {
         icon: '💪',
         connectedTo: [],
         abilities: ['Strength', 'Endurance', 'Physical Power'],
-        recentActivity: 'Locked - Complete Mind Gem quests to unlock',
+        recentActivity: 'Locked - Complete Mind Stone quests to unlock',
         multiplier: 0,
         unlocked: false,
         status: 'locked',
@@ -258,7 +258,7 @@ class WellnessAPI {
         {
           id: 'user1',
           name: 'Tony Stark',
-          avatar: 'https://cdn.jsdelivr.net/gh/marvel-unlimited/assets/characters/iron-man.jpg',
+          avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=TonyStark`,
           level: 42,
           dominantStone: 'mind',
           status: 'online',
@@ -268,7 +268,7 @@ class WellnessAPI {
         {
           id: 'user2',
           name: 'Natasha Romanoff',
-          avatar: 'https://cdn.jsdelivr.net/gh/marvel-unlimited/assets/characters/black-widow.jpg',
+          avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=NatashaRomanoff`,
           level: 38,
           dominantStone: 'power',
           status: 'in-challenge',
@@ -278,7 +278,7 @@ class WellnessAPI {
         {
           id: 'user3',
           name: 'Stephen Strange',
-          avatar: 'https://cdn.jsdelivr.net/gh/marvel-unlimited/assets/characters/doctor-strange.jpg',
+          avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=StephenStrange`,
           level: 45,
           dominantStone: 'time',
           status: 'offline',
@@ -468,7 +468,7 @@ class WellnessAPI {
   }
 
   // Authentication
-  async login(email, password) {
+  async login(email, _password) {
     await this.delay();
     
     // Simulate login (accepts any gmail)
@@ -477,7 +477,7 @@ class WellnessAPI {
         id: 'current-user',
         name: email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         email: email,
-        avatar: 'https://cdn.jsdelivr.net/gh/marvel-unlimited/assets/characters/captain-america.jpg',
+        avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=CurrentUser`,
         level: 12,
         totalXP: 12350,
         joinDate: '2024-01-15',
@@ -615,7 +615,7 @@ class WellnessAPI {
   }
 
   // Complete challenge activity
-  async completeActivity(challengeId, activityData) {
+  async completeActivity(challengeId, _activityData) {
     await this.delay(500);
     
     const challenge = this.challenges.find(c => c.id === challengeId);
